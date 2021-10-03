@@ -111,3 +111,58 @@ Migrating to CreateUsers (20211003212303)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/new" for ::1 at 2021-10-04 00:29:46 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 204.2ms | Allocations: 13450)
+Completed 200 OK in 212ms (Views: 209.7ms | ActiveRecord: 0.0ms | Allocations: 14586)
+
+
+Started GET "/users/new" for ::1 at 2021-10-04 00:32:47 +0300
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 79.2ms | Allocations: 4273)
+  Rendered layout layouts/application.html.erb (Duration: 79.7ms | Allocations: 4337)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 1.5ms | Allocations: 8692)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for #<ActionView::Base:0x0000000000ad70>
+Did you mean?  users_new_path):
+    1: <h1>Users#new</h1>
+    2: <%= form_for @user do |f| %>
+    3:   <%= f.label :username, "username:" %>
+    4:   <%= f.text_field :username %>
+    5:   <%= f.label :email, "email:" %>
+  
+app/views/users/new.html.erb:2
+Started GET "/users/new" for ::1 at 2021-10-04 00:34:18 +0300
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 25.0ms | Allocations: 854)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 4167)
+Completed 200 OK in 57ms (Views: 39.6ms | ActiveRecord: 1.6ms | Allocations: 8099)
+
+
+Started GET "/users/new" for ::1 at 2021-10-04 00:34:41 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 648)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 3852)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 4950)
+
+
