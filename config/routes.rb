@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
   root 'users#show'
   get '/signup', to: 'users#new'
+  get '/signin', to: 'sessions/new'
+  get '/signin', to: 'sessions/create'
+ 
   resources :users, only: [:new, :show, :create]
+  resources :users, only: [:new, :destroy, :create]
   
   # root 'events#index'
   resources :events
