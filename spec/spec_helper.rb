@@ -11,7 +11,7 @@ RSpec.configure do |config|
 
   config.filter_run_when_matching :focus
 
-  config.example_status_persistence_file_path = "spec/examples.txt"
+  config.example_status_persistence_file_path = 'spec/examples.txt'
 
   config.disable_monkey_patching!
 
@@ -19,5 +19,5 @@ RSpec.configure do |config|
   config.order = :random
 
   Kernel.srand config.seed
-# config.profile_examples = 10
+  # config.profile_examples = 10
 end
