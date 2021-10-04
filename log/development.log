@@ -536,3 +536,128 @@ Migrating to AddFieldsToUsers (20211004174645)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events/new" for ::1 at 2021-10-04 23:17:28 +0300
+  [1m[35m (80.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#new as HTML
+Completed 401 Unauthorized in 1186ms (ActiveRecord: 0.0ms | Allocations: 2049)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-04 23:17:41 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 143.1ms | Allocations: 606)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1594.1ms | Allocations: 3030)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24211.5ms | Allocations: 128924)
+Completed 200 OK in 24857ms (Views: 24542.2ms | ActiveRecord: 1.2ms | Allocations: 136927)
+
+
+Started GET "/" for ::1 at 2021-10-04 23:19:30 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (23.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 216.5ms | Allocations: 1007)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 223.0ms | Allocations: 5064)
+Completed 200 OK in 707ms (Views: 200.9ms | ActiveRecord: 24.0ms | Allocations: 10951)
+
+
+Started GET "/events/new" for ::1 at 2021-10-04 23:19:36 +0300
+Processing by EventsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-04 23:19:36 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 148)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 5170)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 5774)
+
+
+Started GET "/" for ::1 at 2021-10-04 23:19:55 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4837)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 5272)
+
+
+Started GET "/sign_up" for ::1 at 2021-10-04 23:21:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/signup" for ::1 at 2021-10-04 23:21:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/signup" for ::1 at 2021-10-04 23:22:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/users/sign_up" for ::1 at 2021-10-04 23:22:33 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 250.4ms | Allocations: 515)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10849.2ms | Allocations: 20956)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16951.5ms | Allocations: 25552)
+Completed 200 OK in 17384ms (Views: 17344.1ms | ActiveRecord: 0.0ms | Allocations: 27431)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-04 23:27:58 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 541.4ms | Allocations: 479)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 750.2ms | Allocations: 10170)
+Started GET "/users/sign_up" for ::1 at 2021-10-04 23:28:05 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 103)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.9ms | Allocations: 9335)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9576.7ms | Allocations: 254024)
+  Rendered layout layouts/application.html.erb (Duration: 5868.1ms | Allocations: 239148)
+Completed 200 OK in 11164ms (Views: 10477.7ms | Allocations: 255897)
+
+
+Completed 200 OK in 5872ms (Views: 5870.6ms | Allocations: 239747)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-04 23:29:52 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 215.5ms | Allocations: 9353)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2928.3ms | Allocations: 122506)
+Completed 200 OK in 3018ms (Views: 2929.0ms | Allocations: 123023)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-04 23:30:12 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17414.6ms | Allocations: 9435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53322.9ms | Allocations: 123757)
+Completed 200 OK in 53325ms (Views: 53323.5ms | Allocations: 124272)
+
+
