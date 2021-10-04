@@ -6,7 +6,9 @@
     <section class="cards">
       <% @events.each do |event| %>
         <article class='card'>
-          <p class="title"><%= event.title %></p>
+          
+             <p><small>Creator: </small><strong><%= event.user.username %></strong></p>
+          <p class="event"><%= event.title %></p>
           <p class='body'><%= event.place %></p>
           <p class='date'><%= event.date %></p>
           <span><%= link_to 'Show', event_path(event) %>||</span>
