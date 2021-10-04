@@ -1322,3 +1322,25 @@ Processing by EventsController#new as HTML
 Completed 200 OK in 79ms (Views: 73.2ms | ActiveRecord: 0.2ms | Allocations: 9453)
 
 
+Started GET "/users/edit" for ::1 at 2021-10-05 00:38:40 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 49.2ms | Allocations: 10108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 80.5ms | Allocations: 14817)
+Completed 200 OK in 99ms (Views: 82.2ms | ActiveRecord: 0.3ms | Allocations: 16485)
+
+
+Started GET "/users/edit" for ::1 at 2021-10-05 00:39:48 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 21.8ms | Allocations: 10036)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 14665)
+Completed 200 OK in 55ms (Views: 48.8ms | ActiveRecord: 0.2ms | Allocations: 17341)
+
+
