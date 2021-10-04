@@ -1810,3 +1810,39 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.6ms | Allocations: 7909)
 
 
+Started GET "/" for ::1 at 2021-10-05 01:18:48 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:10
+  Rendered events/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 8292)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.0ms | Allocations: 9538)
+
+
+Started GET "/" for ::1 at 2021-10-05 01:19:54 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:10
+  Rendered events/index.html.erb within layouts/application (Duration: 25.2ms | Allocations: 2725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 8250)
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 1.5ms | Allocations: 9489)
+
+
