@@ -190,3 +190,28 @@ Migrating to CreateUsers (20211003212303)
   [1m[36mTRANSACTION (254.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-10-04 19:22:57 +0300
+  [1m[35m (234.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (12.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 122.6ms | Allocations: 1135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3226.7ms | Allocations: 23721)
+Completed 200 OK in 4333ms (Views: 3735.4ms | ActiveRecord: 12.6ms | Allocations: 26527)
+
+
+Started GET "/events/new" for ::1 at 2021-10-04 19:23:15 +0300
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 878.9ms | Allocations: 4687)
+  Rendered events/new.html.erb within layouts/application (Duration: 908.5ms | Allocations: 5029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 916.2ms | Allocations: 8119)
+Completed 200 OK in 932ms (Views: 917.6ms | ActiveRecord: 1.4ms | Allocations: 12004)
+
+
