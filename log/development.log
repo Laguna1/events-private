@@ -452,3 +452,75 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.1ms | Allocations: 4584)
 
 
+Started GET "/" for ::1 at 2021-10-04 20:09:41 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4789)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.1ms | Allocations: 5990)
+
+
+Started GET "/" for ::1 at 2021-10-04 20:12:22 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 771.2ms | Allocations: 112288)
+Completed 200 OK in 773ms (Views: 771.8ms | ActiveRecord: 0.1ms | Allocations: 112683)
+
+
+Started GET "/events/new" for ::1 at 2021-10-04 20:14:49 +0300
+Processing by EventsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:14:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 6.5ms | Allocations: 2841)
+  Rendered events/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3182)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 7623)
+Completed 200 OK in 33ms (Views: 19.6ms | ActiveRecord: 1.2ms | Allocations: 12417)
+
+
+Started GET "/events" for ::1 at 2021-10-04 20:14:52 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:16
+  Rendered events/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5610)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms | Allocations: 6180)
+
+
+Started GET "/events/new" for ::1 at 2021-10-04 20:15:37 +0300
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 11.7ms | Allocations: 2454)
+  Rendered events/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 2559)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 7257)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 7658)
+
+
+Started GET "/events/new" for ::1 at 2021-10-04 20:18:47 +0300
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 417.8ms | Allocations: 2452)
+  Rendered events/new.html.erb within layouts/application (Duration: 418.5ms | Allocations: 2559)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3008.2ms | Allocations: 114768)
+Completed 200 OK in 3010ms (Views: 3009.1ms | ActiveRecord: 0.0ms | Allocations: 115165)
+
+
