@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
   <p>
-    <%= link_to @event.creator.name, user_path(@event.creator) %>
+    <strong>Creator:</strong>
+    <%= @event.creator.name %>
   </p>
 <p>
   <strong>Title:</strong>
@@ -18,6 +19,8 @@
   <%= @event.date %>
 </p>
 
+<%= link_to 'Edit', edit_event_path(@event) %> ||
+<%= link_to 'Back', events_path %>
 <p>
   
   <%= visit_event_btn(@event) %>
@@ -28,5 +31,3 @@
     <%= show_visitors(@visitors) %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> ||
-<%= link_to 'Back', events_path %>

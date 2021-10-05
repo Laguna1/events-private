@@ -1,8 +1,8 @@
 module ApplicationHelper
   def show_user_name(current_user)
     if signed_in?
-      "<p class='control'>
-        #{current_user.name}
+      "<p class='control mt-2'>
+        #{link_to current_user.name, user_path(current_user)}
         </p>
           <p class='control'>
             #{link_to 'Logout', destroy_user_session_path, method: :delete, class: 'button is-info'}
@@ -26,10 +26,10 @@ module ApplicationHelper
   end
 
   def visit_event_btn(event)
-    if event.visiting.exists?(user_id: current_user.id)
+    if event.visitings.exists?(user_id: current_user.id)
       '<p>Already visited</p>'.html_safe
     else
-      link_to 'Visit Event', join_event_visitings_path(id: @event.id),
+      link_to 'Visit Event', visitings_join_path(id: @event.id),
               class: 'button is-info is-inverted'.to_s.html_safe
     end
   end

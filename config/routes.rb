@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :visitings
 
   resources :visitings do
-    match '/join_event', to: 'visitings#join_event', via: :post, on: :collection
+    match '/join', to: 'visitings#join', via: :post, on: :collection
   end
 
-  root 'users#index'
+  root 'events#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

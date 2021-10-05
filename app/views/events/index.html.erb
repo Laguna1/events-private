@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div id="container">
-<p class="control">
-                 
-  <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
-                   
-                </p>
+
 <h3 class="title-reg is-2">All Events</h3>
 
 <div class="centered">
@@ -12,7 +8,7 @@
       <% @events.each do |event| %>
         <article class='card'>
           <% if signed_in? %>
-            <%= event.creator.name %>
+            <p>Creator: <%= event.creator.name %></p>
           <% end %>
           <p class="event">What: <%= event.title %></p>
           <p class='body'>Where: <%= event.place %></p>
@@ -20,6 +16,7 @@
           <span><%= link_to 'Show', event_path(event) %>||</span>
           <span><%= link_to 'Edit', edit_event_path(event) %>||</span>
           <span><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+           <p><%= visit_event_btn(@event) %></p>
           <p>*  *  *  *  *</p>
         </article>
       <% end %>

@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all.order('created_at DESC')
-    @event = Event.new
+    @upcoming_events = Event.upcoming_events
+    @past_events = Event.past_events
   end
 
   # GET /events/1 or /events/1.json
@@ -16,7 +17,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = current_user.events.build
+    @event = Event.new
   end
 
   # GET /events/1/edit
@@ -24,7 +25,7 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = current_user.events.build(event_params)
+    @event = current_user.created_events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -57,6 +58,13 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def show_upcoming
+    @upcoming_events = Event.upcoming_events
+  end
+  def show_past
+    @past_events = Event.past_events
   end
 
   private
