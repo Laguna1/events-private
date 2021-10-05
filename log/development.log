@@ -4724,3 +4724,304 @@ FOREIGN KEY ("creator_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2021-10-05 21:56:47 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  Rendered events/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 5739)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 9939)
+Completed 200 OK in 124ms (Views: 65.8ms | ActiveRecord: 0.5ms | Allocations: 15251)
+
+
+Started GET "/events" for ::1 at 2021-10-05 21:57:42 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  Rendered events/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 6847)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.4ms | Allocations: 8092)
+
+
+Started GET "/events" for ::1 at 2021-10-05 21:59:57 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 4986)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 5050)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.7ms | Allocations: 6267)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    12:       <% @events.each do |event| %>
+    13:         <article class='card'>
+    14:           <% if signed_in? %>
+    15:             <%= event.creator.name %>
+    16:           <% end %>
+    17:           <p class="event">What: <%= event.title %></p>
+    18:           <p class='body'>Where: <%= event.place %></p>
+  
+app/views/events/index.html.erb:15
+app/views/events/index.html.erb:12
+Started GET "/" for ::1 at 2021-10-05 22:00:07 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:49
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 6336)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.4ms | Allocations: 7365)
+
+
+Started GET "/events/new" for ::1 at 2021-10-05 22:00:17 +0300
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms | Allocations: 4463)
+
+
+  
+NoMethodError (undefined method `events' for #<User:0x00007f0f802da9b0>):
+  
+app/controllers/events_controller.rb:16:in `new'
+Started GET "/" for ::1 at 2021-10-05 22:00:24 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:49
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 5781)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.4ms | Allocations: 6179)
+
+
+Started GET "/" for ::1 at 2021-10-05 22:06:34 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:47
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 7069)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 1.3ms | Allocations: 8272)
+
+
+Started GET "/" for ::1 at 2021-10-05 22:06:36 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:47
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 5780)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 3.4ms | Allocations: 6182)
+
+
+Started GET "/" for ::1 at 2021-10-05 22:07:01 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 872)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:47
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6325)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.3ms | Allocations: 7525)
+
+
+Started GET "/events" for ::1 at 2021-10-05 22:07:02 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:15
+  Rendered events/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 4339)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4441)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms | Allocations: 5977)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    12:       <% @events.each do |event| %>
+    13:         <article class='card'>
+    14:           <% if signed_in? %>
+    15:             <%= event.creator.name %>
+    16:           <% end %>
+    17:           <p class="event">What: <%= event.title %></p>
+    18:           <p class='body'>Where: <%= event.place %></p>
+  
+app/views/events/index.html.erb:15
+app/views/events/index.html.erb:12
+Started GET "/" for ::1 at 2021-10-05 22:07:06 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1277)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:47
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 6352)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.3ms | Allocations: 6750)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mVisiting Load (0.2ms)[0m  [1m[34mSELECT "visitings".* FROM "visitings" WHERE "visitings"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[36mEvent Destroy (2.1ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (125.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mVisiting Load (0.2ms)[0m  [1m[34mSELECT "visitings".* FROM "visitings" WHERE "visitings"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (135.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mVisiting Load (0.2ms)[0m  [1m[34mSELECT "visitings".* FROM "visitings" WHERE "visitings"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[36mEvent Destroy (2.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (103.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/events/new" for ::1 at 2021-10-05 22:09:30 +0300
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms | Allocations: 4411)
+
+
+  
+NoMethodError (undefined method `events' for #<User:0x000056080552c110>):
+  
+app/controllers/events_controller.rb:16:in `new'
+Started GET "/events/new" for ::1 at 2021-10-05 22:09:33 +0300
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms | Allocations: 4410)
+
+
+  
+NoMethodError (undefined method `events' for #<User:0x00005608043cd978>):
+  
+app/controllers/events_controller.rb:16:in `new'
+Started GET "/events/new" for ::1 at 2021-10-05 22:09:51 +0300
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 4410)
+
+
+  
+NoMethodError (undefined method `events' for #<User:0x00007f0f80d7e6a0>):
+  
+app/controllers/events_controller.rb:16:in `new'
+Started GET "/" for ::1 at 2021-10-05 22:09:55 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:47
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 5782)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.4ms | Allocations: 6179)
+
+
+Started GET "/events" for ::1 at 2021-10-05 22:10:00 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  Rendered events/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1594)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5786)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.6ms | Allocations: 6637)
+
+
+Started GET "/events/new" for ::1 at 2021-10-05 22:10:05 +0300
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 4411)
+
+
+  
+NoMethodError (undefined method `events' for #<User:0x000056080539c5c0>):
+  
+app/controllers/events_controller.rb:16:in `new'
+Started GET "/events" for ::1 at 2021-10-05 22:10:09 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  Rendered events/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 1672)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 5886)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.6ms | Allocations: 6326)
+
+
+Started GET "/events" for ::1 at 2021-10-05 22:11:11 +0300
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY created_at DESC[0m
+  ↳ app/views/events/index.html.erb:12
+  Rendered events/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1930)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 6536)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.6ms | Allocations: 7781)
+
+

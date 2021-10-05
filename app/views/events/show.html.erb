@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+  <p>
+    <%= link_to @event.creator.name, user_path(@event.creator) %>
+  </p>
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
@@ -13,6 +16,11 @@
 <p>
   <strong>Date:</strong>
   <%= @event.date %>
+</p>
+
+<p>
+  <strong>Visitors:</strong>
+    <%= show_visitors(@visitors) %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> ||

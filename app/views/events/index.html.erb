@@ -2,17 +2,18 @@
 <div id="container">
 <p class="control">
                  
-                      <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
+  <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
                    
                 </p>
-<h3 class="title-reg is-2">Events</h3>
+<h3 class="title-reg is-2">All Events</h3>
 
 <div class="centered">
     <section class="cards">
       <% @events.each do |event| %>
         <article class='card'>
-          
-             <%# <p><small>Creator: </small><strong><%= event.user.username %></strong></p> %>
+          <% if signed_in? %>
+            <%= event.creator.name %>
+          <% end %>
           <p class="event">What: <%= event.title %></p>
           <p class='body'>Where: <%= event.place %></p>
           <p class='date'>When: <%= event.date %></p>

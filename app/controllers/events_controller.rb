@@ -9,7 +9,10 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1 or /events/1.json
-  def show; end
+  def show
+    @event = Event.find(params[:id])
+    @visitors = @event.visitors
+  end
 
   # GET /events/new
   def new

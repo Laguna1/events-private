@@ -13,4 +13,15 @@ module ApplicationHelper
         </p>".html_safe
     end
   end
+
+  def show_visitors(visitors)
+    result = '<p>No visitors yet</p>'
+    unless visitors.count.zero?
+      result = ''
+      visitors.each do |visitor|
+        result += "<div class='rounded'>#{visitor.name}</p>"
+      end
+    end
+    result.html_safe
+  end
 end
