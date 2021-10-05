@@ -27,6 +27,12 @@
        <%= link_to root_path, class: "navbar-item" do %>
          <h1 class="title is-5">PRIVATE EVENTS</h1>
       <% end %>
+      <p class='control'>
+                <%= link_to 'All Members', users_path, class: "button is-info is-inverted" %>
+              </p>
+              <p class='control'>
+                <%= link_to 'New Event', new_event_path, class: "button is-info is-inverted" %>
+              </p>
         <div class="navbar-burger burger" data-target="navbarExample">
          <span></span>
          <span></span>
@@ -38,9 +44,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-              <p class='control'>
-                <%= link_to 'New Event', new_event_path, class: "button is-info is-inverted" %>
-              </p>
+            
 
               <%= show_user_name(current_user) %>
 
