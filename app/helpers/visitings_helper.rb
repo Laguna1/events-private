@@ -1,0 +1,2 @@
+module VisitingsHelper
+end
