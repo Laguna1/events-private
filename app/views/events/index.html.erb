@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div id="container">
+<p class="control">
+                 
+                      <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
+                   
+                </p>
 <h3 class="title-reg is-2">Events</h3>
 
 <div class="centered">
@@ -7,7 +12,7 @@
       <% @events.each do |event| %>
         <article class='card'>
           
-             <p><small>Creator: </small><strong><%= event.user.username %></strong></p>
+             <%# <p><small>Creator: </small><strong><%= event.user.username %></strong></p> %>
           <p class="event">What: <%= event.title %></p>
           <p class='body'>Where: <%= event.place %></p>
           <p class='date'>When: <%= event.date %></p>

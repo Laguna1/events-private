@@ -1,32 +1,45 @@
-<%= form_with(model: event) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<section class="section">
+  <div class="section">
+    <div class="container">
 
-      <ul>
-        <% event.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+
+      <div class="columns is-centered">
+
+      <div class="column is-4">
+      <h2 class="title is-2">New Event</h2>
+
+        <%= simple_form_for(@event) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :title, required: true, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+  <div class="field">
+            <div class="control">
+             <%= f.input :place, required: true, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+             <%= f.input :date, required: true, autofocus: true, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+             <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+   </div>
+          </div>
         <% end %>
-      </ul>
+        <br />
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>
