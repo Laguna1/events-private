@@ -24,4 +24,13 @@ module ApplicationHelper
     end
     result.html_safe
   end
+
+  def visit_event_btn(event)
+    if event.visiting.exists?(user_id: current_user.id)
+      '<p>Already visited</p>'.html_safe
+    else
+      link_to 'Visit Event', join_event_visitings_path(id: @event.id),
+              class: 'button is-info is-inverted'.to_s.html_safe
+    end
+  end
 end
